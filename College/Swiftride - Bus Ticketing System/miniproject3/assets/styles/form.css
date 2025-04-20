@@ -1,0 +1,133 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main Container */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Map Container */
+.map-container {
+    flex: 1;
+    height: 500px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+/* Form Container */
+.form-container {
+    flex: 1;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 500px;
+    overflow-y: auto;
+}
+
+
+h3 {
+    margin-top: 0;
+    padding: 10px;
+    border: 2px solid black;
+    color: black;
+    background-color: #A7C7E7;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    display: grid;
+    grid-template-columns: 90px auto;
+    gap: 10px;
+    align-items: center;
+}
+
+.input-group label {
+    font-size: 14px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.input-group input,
+.input-group select {
+    padding: 8px;
+    border: 2px solid rgb(0, 0, 0);
+    box-sizing: border-box;
+}
+
+.leaflet-routing-container {
+    display: none !important;
+    /* Hides the directions panel */
+}
+
+
+
+
+
+.button-group {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: 2px solid rgb(0, 0, 0);
+            cursor: pointer;
+            width: 48%;
+            box-sizing: border-box;
+        }
+
+        .btn-submit {
+            background-color: #A7C7E7;
+        }
+
+        .btn-submit:hover {
+            background-color: #5A9BD8;
+        }
+
+        .btn-clear {
+            background-color: #EF5B5B;
+            color: white;
+        }
+
+        .btn-clear:hover {
+            background-color: #D94B4B;
+        }
+
+/* Style for destination suggestions */
+.suggestions {
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+
+}
+
+.suggestions li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestions li:hover {
+    background-color: #f4f4f4;
+}

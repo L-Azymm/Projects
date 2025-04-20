@@ -1,0 +1,54 @@
++-----------------------------------+
+|           Swiftride GMi           |
++-----------------------------------+
+
+Team member
+Project Manager     : Luqman Aziem
+Lead Developer      : Adam Riezqie
+UI/UX Designer      : Wan Khairulnaim
+Quality Assurance   : Azris De Zaini
+
+To-do List:
+Day 1: 26/11
+[_] Design the system flow process
+    [_] Flowchart/Pseudocode
+    [_] Page-to-Page Connection (Canva)
+[_] Redo Site-Map in Canva
+[_] Design the website
+    [_] Calendar
+        [/] Create a cute calendar
+        [_] Add transportation logo (Van/Bus) for booked day in calendar
+        [_] Add reservation logo in Header
+        [_] Add Previous and Next button to navigate calendar
+        [_] Add Month and Year dropdown button to fast navigation
+    [_] Header
+        [/] Reuse PBL 1 Header
+        [_] Change Menu in header to logo
+    [_] Landing Page - index.php
+        [/] Create Landng Page
+        [_] Add Footer
+        [_] Add Tutorial section
+        [_] Add a message/notification popup features
+        [_] Add FAQs section
+
+[_] Extra
+    [_] Timeline #Timeline view (Hour)
+        [_] Toggle view between Calendar view and Timeline view
+        [_] If the reservation is more than one day, extend the timeline    
+
+Day 2: 27/11
+[_] Connect Frontend & Backend (Database)
+[_] Testing 1
+
+Day 3: 28/11
+[_] Improvement (if needed)
+[_] Testing 2
+
+Day 4: 29/11
+
+Day 5: 30/11
+[_] Final Check
+[_] Report
+
+Day 6: 01/12
+[_] Submit in VLU

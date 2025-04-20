@@ -1,0 +1,117 @@
+/* Calendar Styling */
+.calendar-container {
+    max-width: 600px;
+    margin: 10 auto;
+    background: #ffffff;
+    padding: 10px;
+    border: 2px solid #000000;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    background: #ffffff;
+    padding: 10px;
+    border: 2px solid #000000;
+}
+
+.calendar-title {
+    grid-column: span 7;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #A7C7E7;
+    padding: 10px;
+    color: #000000;
+    border: 3px solid #000000;
+    margin-bottom: 10;
+}
+
+.day,
+.day.empty {
+    position: relative;
+    background: #fff;
+    border: 3px solid #000000;
+    text-align: center;
+    padding: 0;
+    aspect-ratio: 1 / 0.8;
+}
+
+.day-header {
+    font-weight: bold;
+    background: #A7C7E7;
+    color: #000000;
+    text-align: center;
+    padding: 5px;
+    border: 3px solid #000000;
+}
+
+.day-number {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.label {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 5px;
+    color: #000000;
+}
+
+.day.booked {
+    background: #EF5B5B;
+    color: #fff;
+    font-weight: bold;
+}
+
+.day.pending {
+    background: #f3df6e;
+}
+
+/* Styling for greyed-out days */
+.day.empty.grey {
+    background: #d3d3d3;
+    border: 3px solid #000000;
+}
+
+/* General body styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2efeb;
+}
+
+/* Navigation buttons styling */
+.calendar-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding: 5px;
+    background-color: #A7C7E7;
+    border: 2px solid #000000;
+}
+
+.nav-button {
+    text-decoration: none;
+    padding: 5px 10px;
+    background: #6c757d;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #000000;
+}
+
+.nav-button:hover {
+    background: #5a6268;
+}
