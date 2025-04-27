@@ -8,4 +8,4 @@ It highlights two main types of attacks:
 
 - [**Forced Browsing**](https://owasp.org/www-community/attacks/Forced_browsing)
 
-[Example Demostration](https://github.com/L-Azymm/Projects/blob/main/College/A01%20-%202021%20%E2%80%93%20Broken%20Access%20Control.md/A01.md)
+[Example Demostration](College\A01_2021_Broken_Access_Control\A01.md)
