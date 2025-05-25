@@ -6,8 +6,10 @@ This walkthrough documents the steps taken to monitor and analyze web traffic us
 
 ## 🔧 Environment Setup
 
-- **Wireshark** installed on host system (Windows)
+- **[Wireshark](https://www.wireshark.org/)** installed on host system (Windows)
+
 - **Npcap** installed with the following options enabled:
+
   - ✅ Restrict Npcap driver access to administrators only
   - ✅ Support raw 802.11 traffic for wireless adapters
   - ✅ Install Npcap in WinPcap API-compatible mode
