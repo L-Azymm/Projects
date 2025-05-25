@@ -1,4 +1,4 @@
-# NTC1052 Mini Project: Web Traffic Analysis using Wireshark
+# Web Traffic Analysis using Wireshark
 
 This walkthrough documents the steps taken to monitor and analyze web traffic using Wireshark on a host machine. The objective is to capture and inspect DNS, HTTP, and HTTPS communications from a browser session.
 
@@ -47,7 +47,6 @@ Allow each site to fully load before continuing.
 ```bash
 File → Save As → Choose location
 ```
-
 
 ---
 
