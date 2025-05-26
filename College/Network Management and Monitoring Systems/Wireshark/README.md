@@ -30,6 +30,8 @@ This walkthrough documents the steps taken to monitor and analyze web traffic us
 
 3. Confirm that packets are appearing in real time before continuing.
 
+![alt text](Assets/1/interface.png)
+
 ---
 
 ## 🟡 Step 2: Trigger Web Traffic from Browser
@@ -38,9 +40,15 @@ While Wireshark is running, open a web browser and visit the following websites:
 
 1. [`http://neverssl.com`](http://neverssl.com) – to trigger **HTTP** traffic.
 
+   ![alt text](Assets/2/never.png)
+
 2. [`https://example.com`](https://example.com) – to trigger **HTTPS** (simple TLS handshake).
 
+   ![alt text](Assets/2/example.png)
+
 3. [`https://google.com`](https://google.com) – to trigger **DNS + HTTPS** and more encrypted traffic.
+
+   ![alt text](Assets/2/ggl.png)
 
 Allow each site to fully load before continuing.
 
@@ -52,11 +60,15 @@ Allow each site to fully load before continuing.
 
 2. Click the red **Stop** button to end the capture.
 
+   ![alt text](Assets/3/rib.png)
+
 3. Save the file as `web_traffic.pcapng` using:
 
     ```bash
     File → Save As → Choose location
     ```
+
+![alt text](Assets/3/saved.png)
 
 ---
 
@@ -85,9 +97,7 @@ Allow each site to fully load before continuing.
    - **Query Name**: like `example.com`
    - **Answer Address**: the returned IP address
 
-**📸 Screenshot Tip:**
-
-> One DNS query and its corresponding response, expanded to show domain name and IP.
+![alt text](Assets/4.1/dns.png)
 
 ---
 
@@ -115,9 +125,7 @@ Allow each site to fully load before continuing.
    - **User-Agent**
    - **Content-Type**
 
-**📸 Screenshot Tip:**
-
-> GET request and its matching response expanded in detail.
+![alt text](Assets/4.1/http.png)
 
 ---
 
@@ -155,15 +163,23 @@ Allow each site to fully load before continuing.
 
 - Certificate issuer and subject
 
-**📸 Screenshot Tip:**
+- `Client Hello`
 
-> One `Client Hello` and one `Server Hello` packet expanded to show the handshake process.
+   ![alt text](Assets/4.1/tls_client.png)
+
+- `Server Hello`
+
+   ![alt text](Assets/4.1/tls_server.png)
 
 ---
 
 ### 📡 IP and Port Analysis
 
 - **Filter**: None, or use `ip.addr == <your_ip>` (replace with your actual IP)
+
+Checking Ip in `Windows Poershell`
+
+![alt text](Assets/4.1/your_ip.png)
 
 **What to observe:**
 
@@ -199,11 +215,9 @@ Allow each site to fully load before continuing.
 
   - View entire session conversation (requests & responses).
 
-**📸 Screenshot Tip:**
-
-> A TCP stream showing full communication between your machine and the server.
-
 💡 **Reminder:** Replace `<your_ip_here>` with your actual local IP address (can find via `ipconfig` or `ip a` on Linux/Kali).
+
+![alt text](Assets/4.1/ip_port.png)
 
 ---
 
