@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQLi Scanner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>SQL Injection Scanner</h1>
+    </header>
+
+    <main>
+        <section id="scanner">
+            <form id="scan-form">
+                <input type="url" id="scan-url" placeholder="https://example.com" required>
+                <button type="submit">Scan</button>
+            </form>
+            
+            <div id="scan-status" class="status"></div>
+            
+            <div class="results">
+                <h2>Scan Results</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Payload</th>
+                                <th>Type</th>
+                                <th>Severity</th>
+                                <th>Evidence</th>
+                            </tr>
+                        </thead>
+                        <tbody id="scan-results">
+                            <tr>
+                                <td colspan="5">No scan performed yet</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div id="scan-history" class="history"></div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

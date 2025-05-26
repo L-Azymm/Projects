@@ -1,0 +1,23 @@
+-------------------------SCANS TABLE-------------------------------
+
+CREATE TABLE IF NOT EXISTS scans (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    url TEXT CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+    scan_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+
+--------------------- VULNERABILITIES TABLE -------------------------
+
+CREATE TABLE IF NOT EXISTS vulnerabilities (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    scan_id INT(11) NOT NULL,
+    parameter TEXT CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+    payload TEXT CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+    type TEXT CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+    severity TEXT CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+    evidence TEXT CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (scan_id) REFERENCES scans(id)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
