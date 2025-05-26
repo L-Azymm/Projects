@@ -66,13 +66,28 @@ Allow each site to fully load before continuing.
 
 - **Filter**: `dns`
 
-- Look for DNS queries like:
+**What to look for:**
 
-  - `Standard query A example.com`
+- `Standard query A example.com` — your system requesting an IP.
 
-  - And their corresponding responses (with resolved IPs)
+- `Standard query response A example.com A 93.184.216.34` — DNS server reply with the resolved IP.
 
-- **Screenshot**: Expand packet details of a DNS query and response.
+**Steps:**
+
+1. Enter `dns` in the Wireshark filter bar.
+
+2. Check the **Info** column for lines with DNS queries and replies.
+
+3. Click a packet → Expand `Domain Name System` section.
+
+4. Confirm:
+
+   - **Query Name**: like `example.com`
+   - **Answer Address**: the returned IP address
+
+**📸 Screenshot Tip:**
+
+> One DNS query and its corresponding response, expanded to show domain name and IP.
 
 ---
 
@@ -80,13 +95,29 @@ Allow each site to fully load before continuing.
 
 - **Filter**: `http`
 
-- Look for:
+**What to look for:**
 
-  - `GET / HTTP/1.1` requests to `neverssl.com`
+- `GET / HTTP/1.1` — request to load a webpage.
 
-  - `HTTP/1.1 200 OK` responses
+- `HTTP/1.1 200 OK` — server's response with data.
 
-- **Screenshot**: Capture request + response details in packet pane.
+**Steps:**
+
+1. Apply `http` filter.
+
+2. Look for packets showing `GET` and `200 OK`.
+
+3. Click the packet → Expand `Hypertext Transfer Protocol` section.
+
+4. Look at headers like:
+
+   - **Host**
+   - **User-Agent**
+   - **Content-Type**
+
+**📸 Screenshot Tip:**
+
+> GET request and its matching response expanded in detail.
 
 ---
 
@@ -94,15 +125,39 @@ Allow each site to fully load before continuing.
 
 - **Filter**: `tls`
 
-- Look for:
+**What to look for:**
 
-  - `Client Hello`
+- `Client Hello` — browser initiates secure session.
 
-  - `Server Hello`
+- `Server Hello` — server replies with supported settings.
 
-  - Certificate exchange
+- `Certificate` — server sends TLS certificate.
 
-- **Screenshot**: Expand details of Client Hello and Server Hello packets.
+**Steps:**
+
+1. Use `tls` filter.
+
+2. Scroll to find lines with:
+
+   - `Client Hello`
+
+   - `Server Hello`
+
+   - `Certificate`
+
+3. Click packet → Expand `Transport Layer Security`.
+
+**What to check:**
+
+- TLS version (e.g. TLS 1.2, TLS 1.3)
+
+- Cipher Suites
+
+- Certificate issuer and subject
+
+**📸 Screenshot Tip:**
+
+> One `Client Hello` and one `Server Hello` packet expanded to show the handshake process.
 
 ---
 
@@ -110,11 +165,45 @@ Allow each site to fully load before continuing.
 
 - **Filter**: None, or use `ip.addr == <your_ip>` (replace with your actual IP)
 
-- Right-click → Follow TCP Stream / Follow UDP Stream to view full conversations.
+**What to observe:**
 
-- Observe source/destination IP addresses and port numbers.
+- Source IP and Port → your machine
 
-- **Screenshot**: TCP stream window showing packet exchange.
+- Destination IP and Port:
+
+  - 80 = HTTP
+
+  - 443 = HTTPS
+
+  - 53 = DNS
+
+**Steps:**
+
+1. Click any packet (DNS, HTTP, or HTTPS).
+
+2. Expand:
+
+   - `Internet Protocol Version 4`
+
+   - `Transmission Control Protocol` or `User Datagram Protocol`
+
+3. Note:
+
+   - `Source IP` & `Source Port`
+
+   - `Destination IP` & `Destination Port`
+
+**Extra Exploration:**
+
+- Right-click packet → **Follow TCP Stream** or **Follow UDP Stream**
+
+  - View entire session conversation (requests & responses).
+
+**📸 Screenshot Tip:**
+
+> A TCP stream showing full communication between your machine and the server.
+
+💡 **Reminder:** Replace `<your_ip_here>` with your actual local IP address (can find via `ipconfig` or `ip a` on Linux/Kali).
 
 ---
 
